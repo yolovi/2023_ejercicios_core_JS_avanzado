@@ -1,0 +1,104 @@
+// Dado un array de números, imprimir en la consola solo los números impares.
+
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// ------------------------------------
+
+console.log ("opc1") // funcion comprobar si es par + filter
+//filter devuelve un nuevo array con los numero filtrados
+
+function pairs(arr){
+    return arr % 2 === 0
+}
+
+/* Lo siguiente seria la misma funcion convertida en funcion flecha:
+const pairs = number => number % 2 === 0; */
+
+const pares = array.filter(pairs) // aqui guardamos los numero filtrados en una varaiable
+console.log(pares)
+
+// ------- opc_1B
+console.log(array.filter(pairs)) // aqui no guardamos los numeros filtrados, solo los podemos ver gracias al console.log
+
+
+// ------------------------------------
+
+console.log ("opc2") // funcion comprobar si es par + push
+
+function pares_2(arr) {
+  let pairs = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      pairs += arr[i];
+      // pairs.push(arr[i])
+    }
+  }
+  console.log(pairs)
+}
+
+pares_2(array)
+
+// ------------------------------------
+
+console.log ("opc3") // funcion comprobar si es par + reasignar variable nueva
+
+function pares_3(arr) {
+  let pares_3 = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      pares_3 = arr[i];
+      console.log(pares_3)
+    }
+  }
+}
+
+pares_3(array)
+
+// ----------------
+
+console.log ("opc4") // for
+
+let pares_4 = [];
+
+for (let i = 0; i < array.length; i++) {
+  let number = array[i];
+  if (number % 2 === 0) {
+    pares_4.push(number); // agrega number al arreglo pares_4
+  }
+}
+
+console.log(pares_4);
+
+// ------------------------------------
+
+console.log ("opc5") // for of
+
+let pares_5 = [];
+
+for (let number of array) {
+  if (number % 2 === 0) {
+    pares_5.push(number);
+  }
+}
+
+console.log(pares_5);
+
+// ------------------------------------
+
+console.log ("opc6") // Funcion even 
+
+// const pairs = number => number % 2 === 0;
+
+let resultado = [];
+
+for (let number of array) {
+  if (pairs(number)) {
+    resultado.push(number);
+  }
+}
+
+console.log(resultado);
+
+
+
+ 
